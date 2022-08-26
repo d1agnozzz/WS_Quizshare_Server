@@ -1,0 +1,1 @@
+rootProject.name = "com.insanedevs.sharequiz_server"
