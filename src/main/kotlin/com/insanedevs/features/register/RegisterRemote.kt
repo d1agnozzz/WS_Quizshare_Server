@@ -7,7 +7,7 @@ data class RegisterReceiveRemote(
     val email: String,
     val name: String,
     val secondName: String,
-    val patronymicName: String,
+    val patronymicName: String?,
     val password: String
 )
 

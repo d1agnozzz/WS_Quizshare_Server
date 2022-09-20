@@ -33,7 +33,7 @@ class RegisterController(private val call: ApplicationCall) {
                     password = receive.password,
                     name = receive.name,
                     secondName = receive.secondName,
-                    patronymicName = receive.patronymicName.ifEmpty { null },
+                    patronymicName = receive.patronymicName?.ifEmpty { null },
                 )
             )
 

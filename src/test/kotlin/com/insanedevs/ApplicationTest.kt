@@ -10,6 +10,7 @@ import io.ktor.client.statement.*
 import kotlin.test.*
 import io.ktor.server.testing.*
 import com.insanedevs.plugins.*
+import org.junit.Test
 
 class   ApplicationTest {
     @Test
