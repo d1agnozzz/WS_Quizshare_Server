@@ -25,7 +25,9 @@ class LoginController(private val call: ApplicationCall) {
                      email = userDTO.email,
                      token = UUID.randomUUID().toString()
                  )
-                 while (Tokens.fetchToken(tokenDTO) != null) {
+
+                 // generate new UUID if previous already exists
+                 while (Tokens.fetchToken(tokenDTO.token) != null) {
                      tokenDTO = TokenDTO(
                          email = userDTO.email,
                          token = UUID.randomUUID().toString()

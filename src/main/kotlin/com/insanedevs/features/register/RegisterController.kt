@@ -42,7 +42,7 @@ class RegisterController(private val call: ApplicationCall) {
                 token = UUID.randomUUID().toString()
             )
 
-            while (Tokens.fetchToken(tokenDTO) != null) {
+            while (Tokens.fetchToken(tokenDTO.token) != null) {
                 tokenDTO = TokenDTO(
                     email = receive.email,
                     token = UUID.randomUUID().toString()

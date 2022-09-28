@@ -14,20 +14,19 @@ object Tokens: IdTable<Int>("tokens") {
     fun insert(tokenDTO: TokenDTO){
         transaction {
             Tokens.insert {
-                it[email] = tokenDTO.email
+                it[email] = tokenDTO.email!!
                 it[token] = tokenDTO.token
-
             }
         }
     }
 
-    fun fetchToken(tokenDTO: TokenDTO): TokenDTO? {
+    fun fetchToken(token: String): TokenDTO? {
         return try {
             transaction {
-                val tokenModel = Tokens.select { token.eq(tokenDTO.token) }.single()
+                val tokenModel = Tokens.select { Tokens.token.eq(token) }.single()
                 TokenDTO(
                     email = tokenModel[email],
-                    token = tokenModel[token]
+                    token = tokenModel[Tokens.token]
                 )
             }
         } catch (e: Exception) {
