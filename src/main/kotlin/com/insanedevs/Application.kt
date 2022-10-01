@@ -1,6 +1,7 @@
 package com.insanedevs
 
 import com.insanedevs.features.auth.configureAuthRouting
+import com.insanedevs.features.create_quiz.configureCreateQuizRouting
 import com.insanedevs.features.login.configureLoginRouting
 import com.insanedevs.features.register.configureRegisterRouting
 import io.ktor.server.engine.*
@@ -18,5 +19,6 @@ fun main() {
         configureLoginRouting()
         configureAuthRouting()
         configureRegisterRouting()
+        configureCreateQuizRouting()
     }.start(wait = true)
 }

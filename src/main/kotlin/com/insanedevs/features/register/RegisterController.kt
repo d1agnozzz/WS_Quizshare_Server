@@ -25,8 +25,6 @@ class RegisterController(private val call: ApplicationCall) {
         if (userDTO != null) {
             call.respond(HttpStatusCode.Conflict, "User with this email already exists")
         } else {
-
-
             Users.insert(
                 UserDTO(
                     email = receive.email,
@@ -56,9 +54,5 @@ class RegisterController(private val call: ApplicationCall) {
             call.respond(RegisterResponseRemote(token = tokenDTO.token))
 
         }
-
-
-
-
     }
 }
